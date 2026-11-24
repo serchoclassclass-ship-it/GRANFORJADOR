@@ -3225,3 +3225,117 @@ header nav a {
 #contacto {
     scroll-margin-top: 90px;
 }
+
+/* =====================================================
+   42. OPTIMIZACION MOVIL - GRAN FORJADOR
+===================================================== */
+
+@media (max-width: 600px) {
+
+    /* EVITAR DESBORDAMIENTOS */
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    /* SECCIONES AJUSTADAS A LA PANTALLA */
+    .section,
+    .story {
+        width: auto;
+        max-width: calc(100% - 20px);
+        margin: 25px 10px;
+        padding: 45px 16px;
+    }
+
+    /* FRUTAS EN DOS COLUMNAS */
+    .flavors {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        width: 100%;
+    }
+
+    /* TARJETAS MÁS PEQUEÑAS */
+    .flavor {
+        min-width: 0;
+        padding: 18px 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        text-align: center;
+    }
+
+    /* FRUTA */
+    .fruit {
+        font-size: 38px;
+        margin-bottom: 8px;
+        line-height: 1.2;
+    }
+
+    /* NOMBRE JUSTO DEBAJO DE LA FRUTA */
+    .flavor h3 {
+        font-size: 21px;
+        margin: 0 0 6px;
+        line-height: 1.2;
+    }
+
+    /* REFERENCIA DEL SABOR */
+    .flavor > p {
+        font-size: 12px;
+        line-height: 1.45;
+        margin: 0;
+    }
+
+    /* PANEL DE SABOR */
+    .flavor-detail {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    /* PORTADA */
+    .hero {
+        width: 100%;
+        max-width: 100%;
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .hero-image img {
+        max-width: 220px;
+        max-height: 290px;
+    }
+
+    /* HISTORIA Y ESENCIA */
+    .story-card {
+        width: 100%;
+        padding: 25px 12px;
+    }
+}
+
+/* CELULARES PEQUEÑOS */
+@media (max-width: 360px) {
+
+    .flavors {
+        gap: 8px;
+    }
+
+    .flavor {
+        padding: 15px 5px;
+    }
+
+    .fruit {
+        font-size: 33px;
+    }
+
+    .flavor h3 {
+        font-size: 18px;
+    }
+
+    .flavor > p {
+        font-size: 11px;
+    }
+
+}
