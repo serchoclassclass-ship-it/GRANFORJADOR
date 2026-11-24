@@ -1,0 +1,491 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Gran Forjador. Licor artesanal elaborado con vodka, pulpas de fruta, especias y panela. Una mezcla extraordinaria.">
+
+    <meta name="theme-color" content="#080808">
+
+    <title>Gran Forjador | Una mezcla extraordinaria</title>
+
+    <!-- LOGO DE LA PESTAÑA DEL NAVEGADOR -->
+    <link rel="icon" type="image/png" href="./imagenes/logo.png">
+    <link rel="apple-touch-icon" href="./imagenes/logo.png">
+
+    <!-- TIPOGRAFIAS DE LA MARCA -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- ESTILOS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- =========================================
+         VERIFICACION DE EDAD
+    ========================================== -->
+
+    <div id="age-screen">
+
+        <div class="age-box">
+
+            <h2>Gran Forjador</h2>
+
+            <p>¿Eres mayor de 18 años?</p>
+
+            <button type="button" onclick="verifyAge(true)">
+                SÍ, SOY MAYOR DE EDAD
+            </button>
+
+            <button type="button" onclick="verifyAge(false)">
+                NO
+            </button>
+
+            <small>
+                Disfruta con responsabilidad.
+            </small>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================
+         ENCABEZADO Y NAVEGACION
+    ========================================== -->
+
+    <header>
+
+        <div class="logo" id="logo-forjador" data-light-mode="0">
+            Gran Forjador
+        </div>
+
+        <nav aria-label="Navegación principal">
+            <a href="#inicio">Inicio</a>
+            <a href="#sabores">Sabores</a>
+            <a href="#historia">Nuestra historia</a>
+            <a href="#esencia">Nuestra esencia</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+
+    </header>
+
+
+    <!-- =========================================
+         PORTADA - SIEMPRE VISIBLE
+    ========================================== -->
+
+    <section id="inicio" class="hero">
+
+        <div class="hero-image">
+
+            <img
+                src="./imagenes/etiqueta.jpg"
+                alt="Etiqueta de Gran Forjador"
+            >
+
+        </div>
+
+        <div class="hero-content">
+
+            <p class="subtitle">
+                UNA MEZCLA EXTRAORDINARIA
+            </p>
+
+            <h1>
+                Gran <span>Forjador</span>
+            </h1>
+
+            <h2>
+                El sabor de una combinación única.
+            </h2>
+
+            <p>
+                Vodka, pulpas de fruta y especias.
+                Una combinación con personalidad propia.
+            </p>
+
+            <a href="#sabores" class="btn">
+                DESCUBRE NUESTROS SABORES
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         SABORES - DESPLEGABLE
+    ========================================== -->
+
+    <section id="sabores" class="section accordion-section">
+
+        <button
+            type="button"
+            class="accordion-toggle"
+            aria-expanded="false"
+            aria-controls="sabores-panel"
+        >
+
+            <span class="accordion-title-group">
+
+                <span class="subtitle">
+                    NUESTRA COLECCIÓN
+                </span>
+
+                <span class="accordion-heading">
+                    CINCO FORMAS DE DISFRUTAR
+                </span>
+
+            </span>
+
+            <span class="accordion-icon" aria-hidden="true">+</span>
+
+        </button>
+
+
+        <div
+            class="accordion-panel"
+            id="sabores-panel"
+            aria-hidden="true"
+            inert
+        >
+
+            <div class="accordion-inner">
+
+                <div class="flavors">
+
+                    <!-- CEREZA -->
+
+                    <div class="flavor"
+                         tabindex="0"
+                         role="button"
+                         aria-pressed="false"
+                         data-name="Cereza"
+                         data-description="Una experiencia frutal de carácter especial. Sus notas de cereza aportan una personalidad intensa y agradable, ideal para quienes disfrutan de sabores con presencia y distinción.">
+
+                        <div class="fruit">🍒</div>
+
+                        <h3>Cereza</h3>
+
+                        <p>Original de cereza</p>
+
+                    </div>
+
+
+                    <!-- MANGO -->
+
+                    <div class="flavor"
+                         tabindex="0"
+                         role="button"
+                         aria-pressed="false"
+                         data-name="Mango"
+                         data-description="Ideal para los días soleados. Su carácter tropical invita a disfrutarlo frío, con notas naturales y una esencia frutal perfecta para compartir buenos momentos con amigos y en familia.">
+
+                        <div class="fruit">🥭</div>
+
+                        <h3>Mango</h3>
+
+                        <p>La esencia tropical</p>
+
+                    </div>
+
+
+                    <!-- NARANJA -->
+
+                    <div class="flavor"
+                         tabindex="0"
+                         role="button"
+                         aria-pressed="false"
+                         data-name="Naranja"
+                         data-description="Fresca, expresiva y llena de carácter. Sus notas cítricas evocan momentos de alegría y brindan una personalidad vibrante, ideal para quienes prefieren sabores frutales.">
+
+                        <div class="fruit">🍊</div>
+
+                        <h3>Naranja</h3>
+
+                        <p>Una nota cítrica</p>
+
+                    </div>
+
+
+                    <!-- PIÑA -->
+
+                    <div class="flavor"
+                         tabindex="0"
+                         role="button"
+                         aria-pressed="false"
+                         data-name="Piña"
+                         data-description="Una combinación de espíritu tropical. Su perfil frutal recuerda los días cálidos, las reuniones especiales y los momentos que merecen disfrutarse sin prisa.">
+
+                        <div class="fruit">🍍</div>
+
+                        <h3>Piña</h3>
+
+                        <p>Carácter tropical</p>
+
+                    </div>
+
+
+                    <!-- LULO -->
+
+                    <div class="flavor"
+                         tabindex="0"
+                         role="button"
+                         aria-pressed="false"
+                         data-name="Lulo"
+                         data-description="Inspirado en la riqueza frutal colombiana. Su carácter particular combina notas cítricas y tropicales, ofreciendo una personalidad diferente y memorable.">
+
+                        <div class="fruit">🍈</div>
+
+                        <h3>Lulo</h3>
+
+                        <p>Un sabor colombiano</p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PANEL DE DESCRIPCIONES -->
+
+                <div
+                    class="flavor-detail"
+                    id="flavor-detail"
+                    aria-live="polite"
+                >
+
+                    <h3 id="flavor-detail-title"></h3>
+
+                    <p id="flavor-detail-text"></p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         NUESTRA HISTORIA Y ESENCIA
+         DESPLEGABLES INDEPENDIENTES
+    ========================================== -->
+
+    <section class="story">
+
+        <div class="story-grid">
+
+
+            <!-- NUESTRA HISTORIA -->
+
+            <article
+                class="story-card accordion-section"
+                id="historia"
+            >
+
+                <button
+                    type="button"
+                    class="accordion-toggle"
+                    aria-expanded="false"
+                    aria-controls="historia-panel"
+                >
+
+                    <span class="accordion-title-group">
+
+                        <span class="subtitle">
+                            EL ORIGEN DE UNA IDEA
+                        </span>
+
+                        <span class="accordion-heading">
+                            Nuestra historia
+                        </span>
+
+                    </span>
+
+                    <span class="accordion-icon" aria-hidden="true">+</span>
+
+                </button>
+
+
+                <div
+                    class="accordion-panel"
+                    id="historia-panel"
+                    aria-hidden="true"
+                    inert
+                >
+
+                    <div class="accordion-inner">
+
+                        <p>
+                            Dicen que el hierro recuerda cada golpe y que
+                            el fuego no destruye aquello que está destinado
+                            a transformarse.
+                        </p>
+
+                        <p>
+                            Quizá por eso algunas historias comienzan en
+                            una herrería y terminan encontrando su forma
+                            entre los frutos de la tierra, donde la
+                            naturaleza parece guardar secretos que el
+                            tiempo todavía no ha revelado.
+                        </p>
+
+                        <p>
+                            Gran Forjador nació de esa antigua inquietud
+                            humana por crear, descubrir y dar forma a lo
+                            que todavía no existe. Lleva consigo el eco
+                            del hierro trabajado, la naturaleza pródiga
+                            de nuestra tierra y el espíritu indómito de
+                            quien nunca dejó de buscar su propio camino.
+                        </p>
+
+                        <p>
+                            Hoy, aquella inquietud ha encontrado su lugar
+                            en una botella, hecha para compartir, saborear
+                            y celebrar el encuentro.
+                        </p>
+
+                        <p>
+                            Porque hay creaciones que no buscan apagar
+                            la sed, sino despertar los sentidos; y algunas
+                            historias, parecen destinadas
+                            a trascender el paso del tiempo.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- NUESTRA ESENCIA -->
+
+            <article
+                class="story-card accordion-section"
+                id="esencia"
+            >
+
+                <button
+                    type="button"
+                    class="accordion-toggle"
+                    aria-expanded="false"
+                    aria-controls="esencia-panel"
+                >
+
+                    <span class="accordion-title-group">
+
+                        <span class="subtitle">
+                            EL SECRETO ESTÁ EN LA MEZCLA
+                        </span>
+
+                        <span class="accordion-heading">
+                            Nuestra esencia
+                        </span>
+
+                    </span>
+
+                    <span class="accordion-icon" aria-hidden="true">+</span>
+
+                </button>
+
+
+                <div
+                    class="accordion-panel"
+                    id="esencia-panel"
+                    aria-hidden="true"
+                    inert
+                >
+
+                    <div class="accordion-inner">
+
+                        <p>
+                            Gran Forjador combina vodka con pulpas de
+                            fruta, anís estrellado, clavos de olor
+                            y panela.
+                        </p>
+
+                        <h3>
+                            Y un toque secreto...
+                        </h3>
+
+                        <p>
+                            Hay cosas que es mejor descubrir.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         CONTACTO Y REDES SOCIALES
+    ========================================== -->
+
+    <footer id="contacto">
+
+        <h2>
+            Gran Forjador
+        </h2>
+
+        <p>
+            Una mezcla extraordinaria.
+        </p>
+
+
+        <!-- INSTAGRAM -->
+
+        <div class="social-links">
+
+            <a
+                href="https://www.instagram.com/granforjador/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visitar Instagram de Gran Forjador"
+            >
+
+                <span class="instagram-icon">◎</span>
+
+                <span>@granforjador</span>
+
+            </a>
+
+        </div>
+
+
+        <!-- AVISO LEGAL -->
+
+        <small>
+            © 2026 Gran Forjador.
+            Prohibida la venta a menores de 18 años.
+            El exceso de alcohol es perjudicial para la salud.
+        </small>
+
+    </footer>
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

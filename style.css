@@ -1,0 +1,3227 @@
+
+/* =====================================================
+   GRAN FORJADOR
+   IDENTIDAD VISUAL - NEGRO Y ORO
+   VERSION MEJORADA
+===================================================== */
+
+
+/* =====================================================
+   1. VARIABLES GENERALES
+===================================================== */
+
+:root {
+    --negro: #080808;
+    --negro-suave: #101010;
+    --negro-card: #151515;
+
+    --dorado: #d6b36a;
+    --dorado-claro: #edcf89;
+    --dorado-oscuro: #96733a;
+
+    --blanco: #f5f0e6;
+    --texto: #c5bfb4;
+
+    --borde: rgba(214, 179, 106, 0.25);
+
+    --transicion: 0.4s ease;
+}
+
+
+/* =====================================================
+   2. REINICIO Y CONFIGURACION
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 30px;
+}
+
+body {
+    background-color: #080808 !important;
+
+    background-image:
+        radial-gradient(
+            ellipse at 15% 20%,
+            rgba(214, 179, 106, 0.12),
+            transparent 45%
+        ),
+        radial-gradient(
+            ellipse at 85% 80%,
+            rgba(214, 179, 106, 0.08),
+            transparent 45%
+        ),
+        repeating-linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.025) 0px,
+            rgba(255, 255, 255, 0.025) 1px,
+            transparent 1px,
+            transparent 5px
+        );
+
+    background-attachment: fixed;
+
+    color: var(--blanco);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+/* =====================================================
+   3. ENCABEZADO
+===================================================== */
+
+header {
+    width: 100%;
+    padding: 22px 8%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: rgba(8, 8, 8, 0.96);
+
+    border-bottom: 1px solid var(--borde);
+
+    position: relative;
+    z-index: 10;
+}
+
+
+/* LOGOTIPO */
+
+.logo {
+    font-family: 'Great Vibes', cursive;
+
+    font-size: 46px;
+    font-weight: normal;
+
+    color: var(--dorado-claro);
+
+    text-shadow:
+        0 0 8px rgba(214, 179, 106, 0.25),
+        0 0 22px rgba(214, 179, 106, 0.12);
+
+    transition: text-shadow var(--transicion);
+}
+
+.logo:hover {
+    text-shadow:
+        0 0 12px rgba(214, 179, 106, 0.5),
+        0 0 28px rgba(214, 179, 106, 0.2);
+}
+
+
+/* NAVEGACION */
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+nav a {
+    color: #e5e0d7;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    letter-spacing: 1px;
+
+    position: relative;
+
+    transition:
+        color var(--transicion),
+        text-shadow var(--transicion);
+}
+
+nav a::after {
+    content: "";
+
+    position: absolute;
+
+    bottom: -7px;
+    left: 0;
+
+    width: 0;
+    height: 1px;
+
+    background: var(--dorado);
+
+    transition: width var(--transicion);
+}
+
+nav a:hover {
+    color: var(--dorado-claro);
+
+    text-shadow:
+        0 0 12px rgba(214, 179, 106, 0.25);
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+
+/* =====================================================
+   4. PORTADA PRINCIPAL
+===================================================== */
+
+.hero {
+    min-height: 650px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 100px 20px;
+
+    position: relative;
+
+    isolation: isolate;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.65),
+            rgba(0, 0, 0, 0.85)
+        ),
+        url("images/fondo.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+/* LUZ AMBIENTAL DORADA */
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 650px;
+    height: 650px;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background: radial-gradient(
+        circle,
+        rgba(193, 145, 45, 0.16) 0%,
+        rgba(193, 145, 45, 0.07) 35%,
+        transparent 70%
+    );
+
+    pointer-events: none;
+
+    z-index: -1;
+
+    animation: luzRespira 9s ease-in-out infinite;
+}
+
+
+.hero-content {
+    max-width: 850px;
+
+    position: relative;
+    z-index: 1;
+
+    animation: entradaElegante 1.4s ease both;
+}
+
+
+/* FRASE SUPERIOR */
+
+.subtitle {
+    color: var(--dorado);
+
+    letter-spacing: 5px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    margin-bottom: 25px;
+
+    transition: letter-spacing 0.5s ease;
+}
+
+
+/* TITULO PRINCIPAL */
+
+.hero h1 {
+    font-family: 'Great Vibes', cursive;
+
+    font-size: clamp(85px, 11vw, 145px);
+
+    font-weight: normal;
+
+    line-height: 1.2;
+
+    color: var(--dorado-claro);
+
+    margin-bottom: 20px;
+
+    text-shadow:
+        0 2px 2px #5c4011,
+        0 0 12px rgba(218, 177, 85, 0.3),
+        0 0 35px rgba(218, 177, 85, 0.13);
+}
+
+.hero h1 span {
+    color: var(--dorado-claro);
+}
+
+
+/* SUBTITULO PRINCIPAL */
+
+.hero h2 {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 34px;
+
+    font-weight: 500;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 20px;
+}
+
+
+/* DESCRIPCION */
+
+.hero-content > p:not(.subtitle) {
+    color: var(--texto);
+
+    line-height: 1.9;
+
+    font-size: 17px;
+
+    margin-bottom: 35px;
+}
+
+
+/* =====================================================
+   5. BOTON PRINCIPAL
+===================================================== */
+
+.btn {
+    display: inline-block;
+
+    padding: 16px 32px;
+
+    border: 1px solid var(--dorado);
+
+    color: var(--dorado-claro);
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    transition:
+        background var(--transicion),
+        color var(--transicion),
+        box-shadow var(--transicion),
+        transform var(--transicion);
+}
+
+.btn:hover {
+    background: var(--dorado);
+
+    color: var(--negro);
+
+    box-shadow:
+        0 0 22px rgba(214, 179, 106, 0.25);
+
+    transform: translateY(-3px);
+}
+
+
+/* =====================================================
+   6. SECCION DE SABORES
+===================================================== */
+
+.section {
+    padding: 110px 8%;
+
+    text-align: center;
+}
+
+.section h2 {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 46px;
+
+    font-weight: 500;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 60px;
+}
+
+
+/* CONTENEDOR */
+
+.flavors {
+    display: grid;
+
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+
+    gap: 20px;
+
+    align-items: start;
+}
+
+
+/* TARJETAS */
+
+.flavor {
+    background:
+        linear-gradient(
+            145deg,
+            #191919,
+            #101010
+        );
+
+    border: 1px solid rgba(214, 179, 106, 0.17);
+
+    border-radius: 12px;
+
+    padding: 40px 18px;
+
+    position: relative;
+
+    cursor: pointer;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.45s ease,
+        border-color 0.45s ease,
+        box-shadow 0.45s ease,
+        background 0.45s ease;
+}
+
+
+/* ILUMINACION AL PASAR EL CURSOR */
+
+.flavor:hover {
+    transform: translateY(-7px);
+
+    border-color: rgba(237, 207, 137, 0.8);
+
+    box-shadow:
+        0 0 12px rgba(214, 179, 106, 0.15),
+        0 10px 30px rgba(190, 145, 55, 0.12);
+}
+
+
+/* FRUTAS */
+
+.fruit {
+    font-size: 52px;
+
+    margin-bottom: 22px;
+
+    transition:
+        transform 0.45s ease,
+        filter 0.45s ease;
+}
+
+.flavor:hover .fruit {
+    transform: scale(1.08);
+}
+
+
+/* TITULOS DE SABORES */
+
+.flavor h3 {
+    font-family: 'Cormorant Garamond', serif;
+
+    color: var(--dorado-claro);
+
+    font-size: 29px;
+
+    font-weight: 600;
+
+    margin-bottom: 12px;
+}
+
+
+/* DESCRIPCIONES CORTAS */
+
+.flavor > p {
+    color: #c5bfb4;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+
+
+/* =====================================================
+   8. SABOR SELECCIONADO
+===================================================== */
+
+.flavor.seleccionado {
+    border-color: var(--dorado-claro);
+
+    background:
+        linear-gradient(
+            145deg,
+            #211b10,
+            #11100c
+        );
+
+    box-shadow:
+        0 0 12px rgba(237, 207, 137, 0.25),
+        0 0 30px rgba(214, 179, 106, 0.15),
+        inset 0 0 18px rgba(214, 179, 106, 0.08);
+
+    transform: translateY(-5px);
+}
+
+
+/* NOMBRE ILUMINADO */
+
+.flavor.seleccionado h3 {
+    color: #f5dda5;
+
+    text-shadow:
+        0 0 8px rgba(237, 207, 137, 0.5),
+        0 0 18px rgba(214, 179, 106, 0.25);
+}
+
+
+/* FRUTA RESALTADA */
+
+.flavor.seleccionado .fruit {
+    transform: scale(1.12);
+
+    filter:
+        drop-shadow(0 0 9px rgba(237, 207, 137, 0.45));
+}
+
+
+/* INDICADOR DE SELECCION */
+
+.flavor.seleccionado::after {
+    content: "✦";
+
+    position: absolute;
+
+    top: 12px;
+    right: 15px;
+
+    color: var(--dorado-claro);
+
+    font-size: 19px;
+
+    text-shadow:
+        0 0 10px rgba(237, 207, 137, 0.7);
+}
+
+
+/* ACCESIBILIDAD */
+
+.flavor:focus-visible {
+    outline: 2px solid var(--dorado-claro);
+
+    outline-offset: 4px;
+}
+
+
+/* =====================================================
+   9. NUESTRA ESENCIA
+===================================================== */
+
+.story {
+    background:
+        linear-gradient(
+            135deg,
+            #17130d,
+            #0e0d0a
+        );
+
+    padding: 110px 20px;
+
+    text-align: center;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* LUZ SUAVE */
+
+.story::before {
+    content: "";
+
+    position: absolute;
+
+    width: 450px;
+    height: 450px;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    background: radial-gradient(
+        circle,
+        rgba(193, 145, 45, 0.07),
+        transparent 70%
+    );
+
+    pointer-events: none;
+}
+
+.story > * {
+    position: relative;
+    z-index: 2;
+}
+
+.story h2 {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 48px;
+
+    font-weight: 500;
+
+    margin-bottom: 25px;
+}
+
+.story p {
+    color: var(--texto);
+
+    line-height: 2;
+
+    font-size: 17px;
+
+    max-width: 700px;
+
+    margin: 15px auto;
+}
+
+.story h3 {
+    font-family: 'Great Vibes', cursive;
+
+    color: var(--dorado-claro);
+
+    font-size: 46px;
+
+    font-weight: normal;
+
+    margin-top: 35px;
+}
+
+
+/* =====================================================
+   10. PIE DE PAGINA
+===================================================== */
+
+footer {
+    background: #070707;
+
+    text-align: center;
+
+    padding: 65px 20px;
+
+    border-top: 1px solid var(--borde);
+}
+
+footer h2 {
+    font-family: 'Great Vibes', cursive;
+
+    color: var(--dorado-claro);
+
+    font-size: 48px;
+
+    font-weight: normal;
+
+    margin-bottom: 20px;
+}
+
+footer p {
+    color: #aaa;
+
+    font-size: 15px;
+
+    margin: 12px;
+}
+
+footer small {
+    display: block;
+
+    color: #999;
+
+    font-size: 12px;
+
+    margin-top: 35px;
+
+    line-height: 1.9;
+}
+
+
+/* =====================================================
+   11. VERIFICACION DE EDAD
+===================================================== */
+
+#age-screen {
+    position: fixed;
+
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle,
+            #17130d,
+            #050505 70%
+        );
+
+    z-index: 1000;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 20px;
+}
+
+.age-box {
+    padding: 45px 25px;
+
+    max-width: 420px;
+
+    width: 100%;
+
+    border: 1px solid var(--borde);
+
+    border-radius: 14px;
+
+    background: rgba(10, 10, 10, 0.75);
+
+    box-shadow:
+        0 0 45px rgba(193, 145, 45, 0.08);
+}
+
+.age-box h2 {
+    font-family: 'Great Vibes', cursive;
+
+    color: var(--dorado-claro);
+
+    font-size: 52px;
+
+    font-weight: normal;
+
+    margin-bottom: 25px;
+}
+
+.age-box p {
+    color: var(--blanco);
+
+    font-size: 17px;
+
+    margin-bottom: 25px;
+
+    line-height: 1.7;
+}
+
+.age-box button {
+    padding: 14px 22px;
+
+    margin: 5px;
+
+    cursor: pointer;
+
+    background: transparent;
+
+    color: var(--dorado-claro);
+
+    border: 1px solid var(--dorado);
+
+    border-radius: 4px;
+
+    font-family: 'Montserrat', sans-serif;
+
+    font-size: 13px;
+
+    letter-spacing: 1px;
+
+    transition:
+        background var(--transicion),
+        color var(--transicion);
+}
+
+.age-box button:hover {
+    background: var(--dorado);
+
+    color: var(--negro);
+}
+
+.age-box small {
+    display: block;
+
+    color: #aaa;
+
+    margin-top: 25px;
+
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   12. MARCOS ART DECO - CURVAS ELEGANTES
+===================================================== */
+
+.section,
+.story {
+    isolation: isolate;
+
+    margin: 55px 22px;
+
+    border: 1px solid rgba(214, 179, 106, 0.38);
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 0 25px rgba(214, 179, 106, 0.045),
+        inset 0 0 25px rgba(214, 179, 106, 0.025);
+
+    background-clip: padding-box;
+}
+
+
+/* MARCO INTERIOR */
+
+.section::after,
+.story::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 9px;
+
+    border: 1px solid rgba(214, 179, 106, 0.20);
+
+    border-radius: 12px;
+
+    pointer-events: none;
+
+    z-index: 3;
+}
+
+
+/* LUZ AMBIENTAL */
+
+.section::before {
+    content: "";
+
+    position: absolute;
+
+    width: 600px;
+    height: 350px;
+
+    top: -140px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    background: radial-gradient(
+        ellipse,
+        rgba(193, 145, 45, 0.085),
+        rgba(193, 145, 45, 0.025) 40%,
+        transparent 72%
+    );
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+
+/* =====================================================
+   13. ANIMACIONES
+===================================================== */
+
+@keyframes entradaElegante {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+
+
+@keyframes luzRespira {
+
+    0%, 100% {
+        opacity: 0.55;
+
+        transform:
+            translate(-50%, -50%)
+            scale(0.92);
+    }
+
+    50% {
+        opacity: 1;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1.08);
+    }
+
+}
+
+
+/* =====================================================
+   14. TABLETS
+===================================================== */
+
+@media (max-width: 1000px) {
+
+    .flavors {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+}
+
+
+/* =====================================================
+   15. CELULARES
+===================================================== */
+
+@media (max-width: 800px) {
+
+    header {
+        flex-direction: column;
+
+        gap: 22px;
+
+        padding: 22px 5%;
+    }
+
+    nav {
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 18px;
+    }
+
+    .hero {
+        min-height: 570px;
+    }
+
+    .section {
+        padding: 80px 5%;
+    }
+
+    .flavors {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+@media (max-width: 450px) {
+
+    .logo {
+        font-size: 42px;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+
+    .hero {
+        min-height: 520px;
+
+        padding: 70px 18px;
+    }
+
+    .hero h1 {
+        font-size: 76px;
+    }
+
+    .hero h2 {
+        font-size: 27px;
+    }
+
+    .subtitle {
+        font-size: 12px;
+
+        letter-spacing: 3px;
+    }
+
+    .hero-content > p:not(.subtitle) {
+        font-size: 15px;
+    }
+
+    .section h2,
+    .story h2 {
+        font-size: 37px;
+    }
+
+    .flavors {
+        grid-template-columns: 1fr;
+    }
+
+    .flavor {
+        padding: 32px 22px;
+    }
+
+    .flavor-description p {
+        font-size: 14px;
+    }
+
+    .age-box button {
+        width: 100%;
+
+        margin: 6px 0;
+    }
+
+}
+
+
+/* =====================================================
+   16. ADAPTACION DE MARCOS
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .section,
+    .story {
+        margin: 35px 10px;
+
+        border-radius: 12px;
+    }
+
+    .section::after,
+    .story::after {
+        inset: 6px;
+
+        border-radius: 9px;
+    }
+
+}
+
+
+/* =====================================================
+   17. ACCESIBILIDAD
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+    }
+
+}
+
+/* =====================================================
+   18. PANEL DE SABORES - GRAN FORJADOR PREMIUM
+===================================================== */
+
+.flavor-detail {
+    position: relative;
+
+    width: 100%;
+    max-width: 1000px;
+
+    max-height: 0;
+
+    margin: 0 auto;
+    padding: 0 35px;
+
+    overflow: hidden;
+    opacity: 0;
+
+    text-align: center;
+
+    background: linear-gradient(
+        120deg,
+        #17130d,
+        #0d0d0d,
+        #17130d
+    );
+
+    border: 1px solid transparent;
+    border-radius: 12px;
+
+    transform: translateY(10px);
+
+    transition:
+        max-height 0.55s ease,
+        padding 0.45s ease,
+        margin 0.45s ease,
+        opacity 0.4s ease,
+        transform 0.45s ease,
+        border-color 0.45s ease,
+        box-shadow 0.45s ease;
+}
+
+
+/* PANEL VISIBLE */
+
+.flavor-detail.visible {
+    max-height: 200px;
+
+    padding: 20px 35px;
+
+    margin: 25px auto 0;
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+    border-color: rgba(214, 179, 106, 0.3);
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.3),
+        inset 0 0 20px rgba(214, 179, 106, 0.025);
+}
+
+
+/* TITULO */
+
+.flavor-detail h3 {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 26px;
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    color: #d6b36a;
+
+    margin-bottom: 6px;
+
+    animation: textoElegante 0.6s ease both;
+}
+
+
+/* DESCRIPCION */
+
+.flavor-detail p {
+    max-width: 780px;
+
+    margin: 0 auto;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 16px;
+    font-weight: 500;
+
+    line-height: 1.65;
+
+    letter-spacing: 0.3px;
+
+    color: #c5bba8;
+
+    animation: textoElegante 0.8s ease both;
+}
+
+
+/* ANIMACION DEL TEXTO */
+
+@keyframes textoElegante {
+
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* TARJETA SELECCIONADA */
+
+.flavor.seleccionado {
+    border-color: rgba(237, 207, 137, 0.75);
+
+    box-shadow:
+        0 0 15px rgba(214, 179, 106, 0.12),
+        inset 0 0 15px rgba(214, 179, 106, 0.035);
+}
+
+
+/* PANEL EN CELULARES */
+
+@media (max-width: 600px) {
+
+    .flavor-detail.visible {
+        max-height: 250px;
+
+        padding: 18px 16px;
+
+        margin-top: 20px;
+    }
+
+    .flavor-detail h3 {
+        font-size: 23px;
+    }
+
+    .flavor-detail p {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+}
+
+/* =========================================
+   PORTADA - COMPOSICION GRAN FORJADOR
+   ETIQUETA IZQUIERDA / TEXTO DERECHA
+========================================= */
+
+.hero {
+    min-height: 680px;
+
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 55px;
+
+    padding: 80px 8%;
+
+    text-align: left;
+
+    background:
+        linear-gradient(
+            rgba(8, 8, 8, 0.76),
+            rgba(8, 8, 8, 0.88)
+        ),
+        url("./imagenes/fondo.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* ETIQUETA IZQUIERDA */
+
+.hero-image {
+    flex: 0 1 43%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    z-index: 1;
+}
+
+.hero-image img {
+    display: block;
+
+    width: 100%;
+    max-width: 390px;
+
+    max-height: 530px;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(0 15px 35px rgba(0, 0, 0, 0.7))
+        drop-shadow(0 0 15px rgba(214, 179, 106, 0.12));
+}
+
+/* TEXTO DERECHA */
+
+.hero-content {
+    flex: 0 1 55%;
+
+    max-width: 620px;
+
+    text-align: left;
+
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: clamp(75px, 8vw, 115px);
+}
+
+.hero h2 {
+    font-size: 32px;
+}
+
+.hero-content > p:not(.subtitle) {
+    max-width: 520px;
+}
+
+/* TABLETS Y CELULARES */
+
+@media (max-width: 800px) {
+
+    .hero {
+        flex-direction: column;
+
+        text-align: center;
+
+        gap: 25px;
+
+        padding: 65px 7%;
+    }
+
+    .hero-image {
+        flex: none;
+        width: 100%;
+    }
+
+    .hero-image img {
+        max-width: 260px;
+        max-height: 340px;
+    }
+
+    .hero-content {
+        flex: none;
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero-content > p:not(.subtitle) {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero h1 {
+        font-size: clamp(65px, 12vw, 90px);
+    }
+
+} 
+/* =====================================================
+   19. FONDO MINERAL - PIEDRA OSCURA
+===================================================== */
+
+body {
+    background-color: #080808;
+    background-image:
+        radial-gradient(
+            ellipse at 20% 15%,
+            rgba(120, 105, 82, 0.12),
+            transparent 45%
+        ),
+        radial-gradient(
+            ellipse at 80% 65%,
+            rgba(95, 82, 65, 0.10),
+            transparent 50%
+        );
+    background-attachment: fixed;
+    position: relative;
+    isolation: isolate;
+}
+
+/* TEXTURA MINERAL */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+
+    background-image:
+        repeating-radial-gradient(
+            ellipse at 30% 40%,
+            transparent 0px,
+            rgba(255, 255, 255, 0.025) 1px,
+            transparent 3px,
+            transparent 7px
+        ),
+        repeating-linear-gradient(
+            115deg,
+            transparent 0px,
+            rgba(255, 255, 255, 0.018) 2px,
+            transparent 5px,
+            transparent 13px
+        ),
+        radial-gradient(
+            ellipse at 65% 35%,
+            rgba(214, 179, 106, 0.045),
+            transparent 55%
+        );
+
+    opacity: 0.8;
+}
+
+/* SECCIONES CON FONDO TRANSLUCIDO */
+
+header {
+    background: rgba(8, 8, 8, 0.82);
+}
+
+.story {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(23, 19, 13, 0.82),
+            rgba(8, 8, 8, 0.88)
+        );
+}
+
+footer {
+    background: rgba(7, 7, 7, 0.85);
+}
+/* =====================================================
+   INSTAGRAM - GRAN FORJADOR
+===================================================== */
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    margin: 25px 0;
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+
+    color: var(--dorado-claro);
+    text-decoration: none;
+
+    font-size: 15px;
+    letter-spacing: 1px;
+
+    padding: 12px 22px;
+
+    border: 1px solid var(--borde);
+    border-radius: 30px;
+
+    transition: all 0.4s ease;
+}
+
+.instagram-icon {
+    font-size: 27px;
+}
+
+.social-links a:hover {
+    color: var(--negro);
+    background: var(--dorado);
+
+    box-shadow: 0 0 22px rgba(214, 179, 106, 0.2);
+
+    transform: translateY(-3px);
+}
+
+
+/* =====================================================
+   20. FONDO GENERAL - HIERRO FORJADO
+   UNA SOLA IMAGEN PARA TODA LA PAGINA
+===================================================== */
+
+html {
+    background-color: #080808;
+}
+
+body {
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            rgba(5, 5, 5, 0.42),
+            rgba(5, 5, 5, 0.55)
+        ),
+        url("./imagenes/fondo-forjado.jpg");
+
+    background-size: 100% auto;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+
+    background-color: #080808;
+}
+
+/* Desactivamos la textura artificial anterior */
+body::before {
+    content: none;
+}
+
+/* El encabezado deja ver ligeramente la textura */
+header {
+    background: rgba(8, 8, 8, 0.78);
+}
+
+/* La portada utiliza el fondo general */
+.hero {
+    background: rgba(8, 8, 8, 0.12);
+}
+
+/* Las secciones dejan visible la misma imagen */
+.section {
+    background: transparent;
+}
+
+/* Nuestra historia conserva un velo oscuro */
+.story {
+    background: linear-gradient(
+        135deg,
+        rgba(15, 13, 10, 0.48),
+        rgba(8, 8, 8, 0.58)
+    );
+}
+
+/* Contacto conserva la textura */
+footer {
+    background: rgba(7, 7, 7, 0.78);
+}
+
+/* =====================================================
+   21. HISTORIA Y ESENCIA - DOS COLUMNAS
+===================================================== */
+
+.story {
+    display: block;
+    padding: 110px 8%;
+}
+
+.story-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 55px;
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+.story-card {
+    padding: 35px;
+    text-align: center;
+
+    background: rgba(8, 8, 8, 0.48);
+
+    border: 1px solid var(--borde);
+    border-radius: 4px;
+
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
+}
+
+.story-card h2 {
+    margin-bottom: 25px;
+}
+
+.story-card p {
+    margin-bottom: 20px;
+}
+
+.story-card h3 {
+    color: var(--dorado-claro);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 29px;
+    margin: 25px 0 12px;
+}
+
+/* VERSION MOVIL */
+
+@media (max-width: 800px) {
+
+    .story-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .story-card {
+        padding: 30px 22px;
+    }
+
+}
+
+
+/* =====================================================
+   22. HISTORIA Y ESENCIA - DISEÑO VERTICAL
+===================================================== */
+
+.story {
+    padding: 75px 7%;
+}
+
+.story-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
+/* TARJETAS */
+.story-card {
+    width: 100%;
+    padding: 45px 55px;
+    text-align: center;
+}
+
+/* HISTORIA */
+#historia-contenido {
+    text-align: center;
+    column-count: 1;
+}
+
+#historia-contenido .subtitle,
+#historia-contenido h2 {
+    text-align: center;
+    column-span: none;
+}
+
+#historia-contenido p:not(.subtitle) {
+    max-width: 850px;
+    margin: 0 auto 18px;
+    font-size: 16px;
+    line-height: 1.85;
+    text-align: center;
+}
+
+/* ESENCIA */
+#esencia {
+    text-align: center;
+    padding: 40px 35px;
+}
+
+#esencia p {
+    max-width: 750px;
+    margin: 15px auto;
+    line-height: 1.9;
+}
+
+/* TABLETS Y CELULARES */
+@media (max-width: 800px) {
+
+    .story {
+        padding: 45px 5%;
+    }
+
+    .story-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .story-card {
+        padding: 32px 22px;
+    }
+
+    #historia-contenido p:not(.subtitle) {
+        font-size: 15px;
+        line-height: 1.8;
+    }
+}
+
+/* =====================================================
+   23. RESPLANDOR DORADO - LUZ QUE RESPIRA
+===================================================== */
+
+.story-card {
+    position: relative;
+
+    border: 1px solid rgba(214, 179, 106, 0.30);
+
+    animation: luzForjador 6s ease-in-out infinite;
+}
+
+/* La segunda tarjeta respira en otro momento */
+#esencia {
+    animation-delay: 3s;
+}
+
+/* Animación de luz */
+@keyframes luzForjador {
+
+    0%, 100% {
+        border-color: rgba(214, 179, 106, 0.22);
+
+        box-shadow:
+            0 0 8px rgba(214, 179, 106, 0.04),
+            inset 0 0 8px rgba(214, 179, 106, 0.02);
+    }
+
+    50% {
+        border-color: rgba(237, 207, 137, 0.65);
+
+        box-shadow:
+            0 0 18px rgba(214, 179, 106, 0.18),
+            0 0 38px rgba(214, 179, 106, 0.09),
+            inset 0 0 18px rgba(214, 179, 106, 0.07);
+    }
+}
+
+/* Respeta la preferencia de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+    .story-card {
+        animation: none;
+        box-shadow: 0 0 12px rgba(214, 179, 106, 0.10);
+    }
+}
+
+
+
+/* =====================================================
+   25. FUEGO DE FRAGUA - PIE DE PAGINA
+   EL ULTIMO RESPLANDOR DE GRAN FORJADOR
+===================================================== */
+
+footer {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    min-height: 300px;
+}
+
+/* RESPLANDOR CALIDO INFERIOR */
+
+footer::before {
+    content: "";
+
+    position: absolute;
+    z-index: 0;
+    pointer-events: none;
+
+    left: -5%;
+    right: -5%;
+    bottom: -55px;
+
+    height: 190px;
+
+    background:
+        radial-gradient(
+            ellipse at 20% 100%,
+            rgba(255, 75, 8, 0.30),
+            transparent 65%
+        ),
+        radial-gradient(
+            ellipse at 50% 100%,
+            rgba(255, 145, 25, 0.35),
+            transparent 65%
+        ),
+        radial-gradient(
+            ellipse at 80% 100%,
+            rgba(255, 65, 5, 0.28),
+            transparent 65%
+        );
+
+    filter: blur(22px);
+
+    animation: fuegoFinalLuz 4s ease-in-out infinite alternate;
+}
+
+/* LENGUAS DE FUEGO ASCENDENTES */
+
+footer::after {
+    content: "";
+
+    position: absolute;
+    z-index: 0;
+    pointer-events: none;
+
+    left: 0;
+    right: 0;
+    bottom: -15px;
+
+    height: 155px;
+
+    background:
+        radial-gradient(
+            ellipse 30px 115px at 10% 100%,
+            rgba(255, 95, 10, 0.28),
+            transparent 75%
+        ),
+        radial-gradient(
+            ellipse 22px 90px at 24% 100%,
+            rgba(255, 175, 45, 0.23),
+            transparent 75%
+        ),
+        radial-gradient(
+            ellipse 38px 130px at 42% 100%,
+            rgba(255, 85, 5, 0.26),
+            transparent 75%
+        ),
+        radial-gradient(
+            ellipse 25px 105px at 60% 100%,
+            rgba(255, 180, 45, 0.23),
+            transparent 75%
+        ),
+        radial-gradient(
+            ellipse 35px 120px at 78% 100%,
+            rgba(255, 90, 8, 0.27),
+            transparent 75%
+        ),
+        radial-gradient(
+            ellipse 24px 95px at 94% 100%,
+            rgba(255, 160, 35, 0.22),
+            transparent 75%
+        );
+
+    filter: blur(12px);
+
+    transform-origin: bottom;
+
+    animation: fuegoFinalLlamas 3.5s ease-in-out infinite alternate;
+}
+
+/* CONTENIDO POR ENCIMA DEL FUEGO */
+
+footer > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* MOVIMIENTO DEL FUEGO */
+
+@keyframes fuegoFinalLlamas {
+
+    0% {
+        transform: scaleY(0.75) translateY(8px);
+        opacity: 0.55;
+    }
+
+    50% {
+        transform: scaleY(1.08) translateY(-5px);
+        opacity: 0.90;
+    }
+
+    100% {
+        transform: scaleY(0.85) translateY(3px);
+        opacity: 0.65;
+    }
+}
+
+/* RESPIRACION DEL RESPLANDOR */
+
+@keyframes fuegoFinalLuz {
+
+    from {
+        opacity: 0.45;
+        transform: scaleY(0.85);
+    }
+
+    to {
+        opacity: 0.90;
+        transform: scaleY(1.10);
+    }
+}
+
+/* MOVIMIENTO REDUCIDO */
+
+@media (prefers-reduced-motion: reduce) {
+
+    footer::before,
+    footer::after {
+        animation: none;
+    }
+
+}
+
+/* =====================================================
+   26. BRASAS INCANDESCENTES - GRAN FORJADOR
+===================================================== */
+
+footer {
+    background-image:
+        radial-gradient(circle, rgba(255, 190, 75, .95) 0 1px, transparent 2px),
+        radial-gradient(circle, rgba(255, 105, 20, .85) 0 1.5px, transparent 3px),
+        radial-gradient(circle, rgba(255, 215, 120, .8) 0 1px, transparent 2px),
+        radial-gradient(circle, rgba(255, 90, 10, .75) 0 1px, transparent 2px),
+        radial-gradient(circle, rgba(255, 175, 55, .8) 0 1px, transparent 2px),
+        radial-gradient(circle, rgba(255, 120, 20, .8) 0 1px, transparent 2px);
+    background-repeat: no-repeat;
+    background-size:
+        100% 100%, 100% 100%, 100% 100%,
+        100% 100%, 100% 100%, 100% 100%;
+    animation: brasasAscendentes 8s linear infinite;
+}
+
+@keyframes brasasAscendentes {
+    0% {
+        background-position:
+            10% 110%, 28% 120%, 45% 115%,
+            63% 125%, 80% 110%, 95% 120%;
+    }
+    100% {
+        background-position:
+            14% -20%, 24% -30%, 50% -15%,
+            59% -25%, 85% -20%, 90% -30%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    footer {
+        animation: none;
+    }
+}
+
+/* =====================================================
+   27. ILUMINACION INTERIOR - RECUADROS DE HISTORIA
+===================================================== */
+
+.story-card {
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(214, 179, 106, 0.12),
+            rgba(214, 179, 106, 0.045) 48%,
+            rgba(8, 8, 8, 0.88) 100%
+        );
+
+    border: 1px solid rgba(214, 179, 106, 0.65);
+
+    box-shadow:
+        0 0 12px rgba(214, 179, 106, 0.16),
+        0 0 30px rgba(214, 179, 106, 0.12),
+        inset 0 0 35px rgba(214, 179, 106, 0.075),
+        inset 0 0 8px rgba(255, 225, 160, 0.10);
+
+    transition:
+        box-shadow 0.5s ease,
+        border-color 0.5s ease;
+}
+
+.story-card:hover {
+    border-color: rgba(237, 207, 137, 0.9);
+
+    box-shadow:
+        0 0 18px rgba(214, 179, 106, 0.24),
+        0 0 42px rgba(214, 179, 106, 0.18),
+        inset 0 0 45px rgba(214, 179, 106, 0.11);
+}
+
+
+/* =====================================================
+   28. NUESTRA ESENCIA - RESPLANDOR NATURAL
+===================================================== */
+
+#esencia {
+    animation: esenciaRespira 12s ease-in-out infinite;
+}
+
+#esencia h2 {
+    animation: tituloForjado 10s ease-in-out infinite;
+}
+
+#esencia p {
+    animation: textoForjado 12s ease-in-out infinite;
+}
+
+#esencia h3 {
+    animation: secretoForjado 9s ease-in-out infinite;
+}
+
+/* FONDO: LUZ LENTA Y CALIDA */
+@keyframes esenciaRespira {
+    0%, 100% {
+        box-shadow:
+            0 0 12px rgba(214,179,106,.08),
+            inset 0 0 20px rgba(214,179,106,.025);
+        background-color: rgba(8,8,8,.82);
+    }
+
+    50% {
+        box-shadow:
+            0 0 22px rgba(214,179,106,.18),
+            0 0 35px rgba(214,179,106,.08),
+            inset 0 0 30px rgba(214,179,106,.07);
+        background-color: rgba(28,22,12,.55);
+    }
+}
+
+/* TITULO: BRILLO DISCRETO */
+@keyframes tituloForjado {
+    0%, 100% {
+        opacity: .88;
+        text-shadow: 0 0 4px rgba(214,179,106,.12);
+    }
+
+    50% {
+        opacity: 1;
+        text-shadow: 0 0 12px rgba(214,179,106,.30);
+    }
+}
+
+/* TEXTO: VARIACION CASI IMPERCEPTIBLE */
+@keyframes textoForjado {
+    0%, 100% { opacity: .90; }
+    50% { opacity: 1; }
+}
+
+/* TOQUE SECRETO: DESTELLO CALIDO */
+@keyframes secretoForjado {
+    0%, 100% {
+        opacity: .85;
+        text-shadow: 0 0 4px rgba(214,179,106,.12);
+    }
+
+    50% {
+        opacity: 1;
+        text-shadow: 0 0 13px rgba(237,207,137,.35);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #esencia,
+    #esencia h2,
+    #esencia p,
+    #esencia h3 {
+        animation: none;
+    }
+}
+
+/* =====================================================
+   29. METAL INCANDESCENTE - ORO INTENSO
+===================================================== */
+
+.hero-content h1 {
+    background: linear-gradient(
+        110deg,
+        #ffb900 0%,
+        #ffdf00 20%,
+        #fff36a 35%,
+        #ffcc00 48%,
+        #fff5a0 52%,
+        #ffbf00 65%,
+        #ffe600 82%,
+        #ffb900 100%
+    );
+
+    background-size: 250% 100%;
+    background-position: 100% center;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    filter:
+        drop-shadow(0 0 5px rgba(255, 200, 0, .55))
+        drop-shadow(0 0 14px rgba(255, 170, 0, .28));
+
+    animation: metalIncandescente 8s ease-in-out infinite;
+
+    -webkit-text-stroke: 0.45px rgba(80, 45, 0, .65);
+}
+
+@keyframes metalIncandescente {
+    0%, 65% {
+        background-position: 100% center;
+    }
+
+    100% {
+        background-position: -150% center;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-content h1 {
+        animation: none;
+        background-position: center;
+    }
+}
+
+/* =====================================================
+   31. DESPLEGABLES ELEGANTES - GRAN FORJADOR
+===================================================== */
+
+/* BOTONES DE LAS SECCIONES */
+
+.accordion-toggle {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    padding: 18px 12px;
+
+    border: 1px solid rgba(214, 179, 106, 0.22);
+    border-radius: 8px;
+
+    background: linear-gradient(
+        135deg,
+        rgba(25, 21, 14, 0.75),
+        rgba(8, 8, 8, 0.88)
+    );
+
+    color: var(--dorado-claro);
+    cursor: pointer;
+    font-family: inherit;
+    text-align: center;
+
+    transition:
+        border-color .4s ease,
+        background .4s ease,
+        box-shadow .4s ease;
+}
+
+/* TITULOS */
+
+.accordion-title-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.accordion-heading {
+    color: #ffdf80;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(26px, 3vw, 36px);
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: text-shadow .4s ease;
+}
+
+/* SIMBOLO + */
+
+.accordion-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 36px;
+    height: 36px;
+
+    flex-shrink: 0;
+
+    border: 1px solid rgba(214, 179, 106, .45);
+    border-radius: 50%;
+
+    color: #ffdc70;
+    font-size: 27px;
+    font-weight: 300;
+
+    transition:
+        transform .45s ease,
+        background .4s ease,
+        box-shadow .4s ease;
+}
+
+/* EFECTO AL PASAR EL MOUSE */
+
+.accordion-toggle:hover {
+    border-color: rgba(255, 211, 103, .65);
+
+    box-shadow:
+        0 0 15px rgba(214, 179, 106, .10),
+        inset 0 0 20px rgba(214, 179, 106, .04);
+}
+
+.accordion-toggle:hover .accordion-heading {
+    text-shadow: 0 0 12px rgba(255, 210, 90, .35);
+}
+
+/* ESTADO ABIERTO */
+
+.accordion-section.is-open > .accordion-toggle {
+    border-color: rgba(255, 211, 103, .55);
+
+    box-shadow:
+        0 0 18px rgba(214, 179, 106, .12),
+        inset 0 0 20px rgba(214, 179, 106, .05);
+}
+
+.accordion-section.is-open > .accordion-toggle .accordion-icon {
+    transform: rotate(45deg);
+
+    background: rgba(214, 179, 106, .12);
+
+    box-shadow: 0 0 12px rgba(255, 210, 90, .20);
+}
+
+/* ANIMACION DEL CONTENIDO */
+
+.accordion-panel {
+    display: grid;
+    grid-template-rows: 0fr;
+
+    opacity: 0;
+
+    transition:
+        grid-template-rows .65s ease,
+        opacity .45s ease;
+}
+
+.accordion-inner {
+    min-height: 0;
+    overflow: hidden;
+}
+
+.accordion-section.is-open > .accordion-panel {
+    grid-template-rows: 1fr;
+    opacity: 1;
+}
+
+/* ESPACIO INTERIOR */
+
+#sabores .accordion-inner {
+    padding-top: 25px;
+}
+
+#historia .accordion-inner,
+#esencia .accordion-inner {
+    padding-top: 22px;
+}
+
+/* SEPARACION ENTRE SECCIONES */
+
+.story-grid {
+    gap: 25px;
+}
+
+/* MOVIMIENTO SUAVE EN MOVILES */
+
+@media (max-width: 600px) {
+
+    .accordion-toggle {
+        padding: 15px 10px;
+        gap: 10px;
+    }
+
+    .accordion-heading {
+        font-size: 25px;
+    }
+
+    .accordion-icon {
+        width: 32px;
+        height: 32px;
+        font-size: 24px;
+    }
+
+}
+
+/* RESPETAR PREFERENCIAS DE MOVIMIENTO */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .accordion-panel,
+    .accordion-icon,
+    .accordion-toggle,
+    .accordion-heading {
+        transition: none;
+    }
+
+}
+
+/* =====================================================
+   32. DISEÑO ABIERTO Y ELEGANTE - GRAN FORJADOR
+   MENOS RECUADROS, MÁS ESPACIO Y ELEGANCIA
+===================================================== */
+
+/* Quitar fondos y bordes de las tarjetas principales */
+.story-card {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Botones de desplegar: sin apariencia de caja */
+.accordion-toggle {
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 1px solid rgba(214,179,106,.35) !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 25px 10px;
+}
+
+/* Evitar marcos y brillos al pasar el cursor */
+.accordion-toggle:hover {
+    background: transparent !important;
+    border-color: rgba(255,211,103,.75) !important;
+    box-shadow: none !important;
+}
+
+/* Títulos más limpios */
+.accordion-heading {
+    text-shadow: 0 0 12px rgba(214,179,106,.12);
+}
+
+/* Símbolo de apertura más discreto */
+.accordion-icon {
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    font-size: 32px;
+    color: var(--dorado-claro);
+}
+
+/* Al abrir, solo una línea dorada */
+.accordion-section.is-open > .accordion-toggle {
+    border-color: rgba(255,211,103,.65) !important;
+    box-shadow: none !important;
+}
+
+/* Contenido sin cajas interiores */
+.accordion-inner {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Separación elegante entre historia y esencia */
+#historia,
+#esencia {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* En móviles, mantener amplitud y limpieza */
+@media (max-width: 600px) {
+    .accordion-toggle {
+        padding: 20px 5px;
+    }
+}
+
+/* =====================================================
+   33. ILUMINACIÓN AMBIENTAL - HISTORIA Y ESENCIA
+===================================================== */
+
+#historia-contenido,
+#historia,
+#esencia {
+    position: relative;
+    isolation: isolate;
+}
+
+/* Luz ambiental dorada detrás del contenido */
+#historia-contenido::before,
+#historia::before,
+#esencia::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    pointer-events: none;
+
+    width: 85%;
+    height: 75%;
+
+    top: 12%;
+    left: 7%;
+
+    background: radial-gradient(
+        ellipse at center,
+        rgba(190, 133, 43, .13) 0%,
+        rgba(150, 95, 25, .08) 35%,
+        rgba(100, 65, 20, .035) 60%,
+        transparent 78%
+    );
+
+    filter: blur(35px);
+    opacity: .9;
+}
+
+/* Un matiz de luz diferente para cada sección */
+#esencia::before {
+    background: radial-gradient(
+        ellipse at center,
+        rgba(218, 169, 79, .15) 0%,
+        rgba(160, 105, 35, .07) 40%,
+        transparent 78%
+    );
+}
+
+/* Evitar que las luces interfieran con los botones */
+#historia .accordion-toggle,
+#esencia .accordion-toggle {
+    position: relative;
+    z-index: 1;
+}
+
+/* =====================================================
+   34. HAZ DE LUZ VERTICAL - HISTORIA Y ESENCIA
+===================================================== */
+
+#historia-contenido,
+#historia,
+#esencia {
+    position: relative;
+}
+
+/* Iluminación que nace debajo de la línea del título */
+#historia-contenido .accordion-inner::before,
+#historia .accordion-inner::before,
+#esencia .accordion-inner::before {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+    z-index: 0;
+
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 75%;
+    height: 280px;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 205, 105, .16) 0%,
+        rgba(230, 173, 77, .10) 25%,
+        rgba(200, 140, 50, .045) 60%,
+        transparent 100%
+    );
+
+    clip-path: polygon(43% 0, 57% 0, 100% 100%, 0 100%);
+    filter: blur(20px);
+}
+
+/* El texto queda por delante de la iluminación */
+#historia-contenido .accordion-inner > *,
+#historia .accordion-inner > *,
+#esencia .accordion-inner > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Luz ligeramente más cálida en Nuestra esencia */
+#esencia .accordion-inner::before {
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 218, 135, .18) 0%,
+        rgba(220, 165, 75, .09) 35%,
+        transparent 100%
+    );
+}
+
+/* =====================================================
+   35. LUZ ASCENDENTE AL FINAL DEL TEXTO
+===================================================== */
+
+#historia-contenido .accordion-inner,
+#historia .accordion-inner,
+#esencia .accordion-inner {
+    position: relative;
+    isolation: isolate;
+}
+
+/* Luz que nace abajo y asciende */
+#historia-contenido .accordion-inner::after,
+#historia .accordion-inner::after,
+#esencia .accordion-inner::after {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+    z-index: 0;
+
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 75%;
+    height: 260px;
+
+    background: linear-gradient(
+        to top,
+        rgba(255, 205, 105, .16) 0%,
+        rgba(230, 173, 77, .10) 30%,
+        rgba(200, 140, 50, .045) 65%,
+        transparent 100%
+    );
+
+    clip-path: polygon(0 0, 100% 0, 57% 100%, 43% 100%);
+    filter: blur(20px);
+}
+
+/* Mantener el contenido por delante de las luces */
+#historia-contenido .accordion-inner > *,
+#historia .accordion-inner > *,
+#esencia .accordion-inner > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* =====================================================
+   36. SUAVIZAR LUZ INFERIOR DE NUESTRA ESENCIA
+===================================================== */
+
+#esencia .accordion-inner::after {
+    opacity: .35;
+    background: linear-gradient(
+        to top,
+        rgba(255, 205, 105, .08) 0%,
+        rgba(230, 173, 77, .035) 35%,
+        rgba(200, 140, 50, .015) 65%,
+        transparent 100%
+    );
+
+    filter: blur(32px);
+}
+
+/* =====================================================
+   37. RESPIRACIÓN DE LAS LUCES - GRAN FORJADOR
+===================================================== */
+
+/* Luz superior */
+#historia-contenido .accordion-inner::before,
+#historia .accordion-inner::before,
+#esencia .accordion-inner::before {
+    animation: respirarLuzSuperior 7s ease-in-out infinite;
+}
+
+/* Luz inferior */
+#historia-contenido .accordion-inner::after,
+#historia .accordion-inner::after {
+    animation: respirarLuzInferior 9s ease-in-out infinite;
+}
+
+/* Luz inferior especialmente suave de esencia */
+#esencia .accordion-inner::after {
+    animation: respirarEsencia 10s ease-in-out infinite;
+}
+
+@keyframes respirarLuzSuperior {
+    0%, 100% {
+        opacity: .55;
+        filter: blur(24px);
+    }
+    50% {
+        opacity: 1;
+        filter: blur(30px);
+    }
+}
+
+@keyframes respirarLuzInferior {
+    0%, 100% {
+        opacity: .45;
+        filter: blur(25px);
+    }
+    50% {
+        opacity: .85;
+        filter: blur(32px);
+    }
+}
+
+@keyframes respirarEsencia {
+    0%, 100% {
+        opacity: .25;
+        filter: blur(30px);
+    }
+    50% {
+        opacity: .50;
+        filter: blur(38px);
+    }
+}
+
+/* Respetar preferencias de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+    #historia-contenido .accordion-inner::before,
+    #historia .accordion-inner::before,
+    #esencia .accordion-inner::before,
+    #historia-contenido .accordion-inner::after,
+    #historia .accordion-inner::after,
+    #esencia .accordion-inner::after {
+        animation: none;
+    }
+}
+
+/* =====================================================
+   38. ENCUENTRO DE LUCES - GRAN FORJADOR
+===================================================== */
+
+/* Luz superior: desciende suavemente */
+#historia-contenido .accordion-inner::before,
+#historia .accordion-inner::before,
+#esencia .accordion-inner::before {
+    animation: luzDesciende 9s ease-in-out infinite;
+}
+
+/* Luz inferior: asciende suavemente */
+#historia-contenido .accordion-inner::after,
+#historia .accordion-inner::after {
+    animation: luzAsciende 9s ease-in-out infinite;
+}
+
+/* Esencia conserva una iluminación más delicada */
+#esencia .accordion-inner::after {
+    animation: luzEsencia 11s ease-in-out infinite;
+}
+
+@keyframes luzDesciende {
+    0%, 100% {
+        opacity: .35;
+        transform: translate(-50%, -12px);
+    }
+    50% {
+        opacity: .75;
+        transform: translate(-50%, 18px);
+    }
+}
+
+@keyframes luzAsciende {
+    0%, 100% {
+        opacity: .30;
+        transform: translate(-50%, 12px);
+    }
+    50% {
+        opacity: .65;
+        transform: translate(-50%, -18px);
+    }
+}
+
+@keyframes luzEsencia {
+    0%, 100% {
+        opacity: .20;
+        transform: translate(-50%, 10px);
+    }
+    50% {
+        opacity: .42;
+        transform: translate(-50%, -12px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #historia-contenido .accordion-inner::before,
+    #historia .accordion-inner::before,
+    #esencia .accordion-inner::before,
+    #historia-contenido .accordion-inner::after,
+    #historia .accordion-inner::after,
+    #esencia .accordion-inner::after {
+        animation: none;
+    }
+}
+
+/* =====================================================
+   39. MAYOR INTENSIDAD EN EL ENCUENTRO DE LUCES
+===================================================== */
+
+#historia-contenido .accordion-inner::before,
+#historia .accordion-inner::before {
+    opacity: .85;
+    filter: blur(25px);
+}
+
+#historia-contenido .accordion-inner::after,
+#historia .accordion-inner::after {
+    opacity: .75;
+    filter: blur(25px);
+}
+
+/* Nuestra esencia: un poco más de luz, conservando sutileza */
+#esencia .accordion-inner::before {
+    opacity: .75;
+    filter: blur(28px);
+}
+
+#esencia .accordion-inner::after {
+    opacity: .48;
+    filter: blur(34px);
+}
+
+/* Respiración ligeramente más luminosa */
+@keyframes luzDesciende {
+    0%, 100% {
+        opacity: .55;
+        transform: translate(-50%, -12px);
+    }
+    50% {
+        opacity: .95;
+        transform: translate(-50%, 18px);
+    }
+}
+
+@keyframes luzAsciende {
+    0%, 100% {
+        opacity: .45;
+        transform: translate(-50%, 12px);
+    }
+    50% {
+        opacity: .85;
+        transform: translate(-50%, -18px);
+    }
+}
+
+@keyframes luzEsencia {
+    0%, 100% {
+        opacity: .32;
+        transform: translate(-50%, 10px);
+    }
+    50% {
+        opacity: .58;
+        transform: translate(-50%, -12px);
+    }
+}
+
+/* =====================================================
+   LUZ VIAJERA DEL MENU - GRAN FORJADOR
+===================================================== */
+
+header nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+}
+
+header nav a {
+    position: relative;
+    isolation: isolate;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: var(--dorado-claro);
+    text-shadow: 0 0 5px rgba(255, 210, 120, .15);
+}
+
+/* Resplandor detrás de cada palabra */
+header nav a::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: -15px -13px;
+
+    background: radial-gradient(
+        ellipse,
+        rgba(255, 210, 120, .32) 0%,
+        rgba(230, 170, 75, .16) 38%,
+        transparent 75%
+    );
+
+    filter: blur(13px);
+    opacity: 0;
+    animation: luzSaltoMenu 10s infinite;
+}
+
+/* Cada palabra recibe su luz en un momento diferente */
+header nav a:nth-child(1)::before {
+    animation-delay: 0s;
+}
+
+header nav a:nth-child(2)::before {
+    animation-delay: 2s;
+}
+
+header nav a:nth-child(3)::before {
+    animation-delay: 4s;
+}
+
+header nav a:nth-child(4)::before {
+    animation-delay: 6s;
+}
+
+header nav a:nth-child(5)::before {
+    animation-delay: 8s;
+}
+
+/* Intensidad de la iluminación */
+@keyframes luzSaltoMenu {
+    0%, 15%, 100% {
+        opacity: 0;
+    }
+
+    5%, 10% {
+        opacity: 1;
+    }
+}
+
+/* Brillo suave de las letras */
+header nav a {
+    transition: text-shadow .4s ease, color .4s ease;
+}
+
+header nav a:hover {
+    color: #fff0c2;
+    text-shadow:
+        0 0 8px rgba(255, 220, 145, .65),
+        0 0 18px rgba(255, 190, 75, .35);
+}
+
+/* Adaptación móvil */
+@media (max-width: 600px) {
+    header nav {
+        gap: 12px;
+    }
+
+    header nav a {
+        font-size: 12px;
+        letter-spacing: .4px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    header nav a::before {
+        animation: none;
+        opacity: .5;
+    }
+}
+/* =====================================================
+   41. RESPLANDOR AMBIENTAL DE TODA LA PÁGINA
+   GRAN FORJADOR
+===================================================== */
+
+body {
+    position: relative;
+    isolation: isolate;
+}
+
+/* Luz ambiental móvil */
+body::before {
+    content: "";
+    position: fixed;
+    z-index: -1;
+    pointer-events: none;
+
+    width: 650px;
+    height: 650px;
+
+    top: 10%;
+    left: -300px;
+
+    border-radius: 50%;
+
+    background: radial-gradient(
+        circle,
+        rgba(190, 119, 35, .12) 0%,
+        rgba(174, 105, 35, .07) 30%,
+        rgba(150, 85, 25, .025) 55%,
+        transparent 72%
+    );
+
+    filter: blur(65px);
+
+    animation: luzAmbientalForja 18s ease-in-out infinite alternate;
+}
+
+@keyframes luzAmbientalForja {
+    0% {
+        transform: translate(0, 0);
+        opacity: .55;
+    }
+
+    50% {
+        transform: translate(45vw, 25vh);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(75vw, 55vh);
+        opacity: .65;
+    }
+}
+
+/* Adaptación para celulares */
+@media (max-width: 600px) {
+    body::before {
+        width: 420px;
+        height: 420px;
+        filter: blur(55px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body::before {
+        animation: none;
+        opacity: .65;
+    }
+}
+/* MAS INTENSIDAD PARA LA LUZ VIAJERA DEL MENU */
+
+header nav a::before {
+    background: radial-gradient(
+        ellipse,
+        rgba(255, 220, 145, .60) 0%,
+        rgba(255, 190, 85, .32) 35%,
+        rgba(220, 145, 45, .12) 60%,
+        transparent 80%
+    );
+
+    filter: blur(17px);
+}
+
+header nav a {
+    text-shadow:
+        0 0 7px rgba(255, 215, 130, .30);
+}
+
+@keyframes luzSaltoMenu {
+    0%, 15%, 100% {
+        opacity: 0;
+    }
+
+    5%, 10% {
+        opacity: 1;
+    }
+}
+/* =====================================================
+   GRAN FORJADOR - CINCO TRANSFORMACIONES DE LUZ
+===================================================== */
+
+#logo-forjador {
+    position: relative;
+    display: inline-block;
+    isolation: isolate;
+    cursor: pointer;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+
+    color: var(--dorado-claro);
+
+    text-shadow:
+        0 0 6px rgba(255, 210, 120, .4),
+        0 0 15px rgba(255, 175, 65, .25);
+}
+
+/* LUZ PRINCIPAL */
+
+#logo-forjador::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    pointer-events: none;
+
+    inset: -100% -40%;
+
+    border-radius: 50%;
+
+    background: radial-gradient(
+        ellipse,
+        rgba(255, 225, 155, .85),
+        rgba(255, 180, 70, .4) 35%,
+        rgba(190, 110, 30, .12) 60%,
+        transparent 80%
+    );
+
+    filter: blur(25px);
+}
+
+/* LUZ SECUNDARIA */
+
+#logo-forjador::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    pointer-events: none;
+
+    inset: -65% -25%;
+
+    background: radial-gradient(
+        ellipse,
+        rgba(255, 240, 195, .4),
+        transparent 70%
+    );
+
+    filter: blur(15px);
+}
+
+/* 1. RESPIRACIÓN */
+
+#logo-forjador[data-light-mode="0"]::before {
+    animation: modoRespiracion 2.8s ease-in-out infinite;
+}
+
+#logo-forjador[data-light-mode="0"]::after {
+    animation: modoRespiracion 2.8s ease-in-out infinite reverse;
+}
+
+@keyframes modoRespiracion {
+    0%, 100% {
+        opacity: .35;
+        transform: scale(.8);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.25);
+    }
+}
+
+/* 2. GIRO */
+
+#logo-forjador[data-light-mode="1"]::before {
+    animation: modoGiro 3s linear infinite;
+}
+
+#logo-forjador[data-light-mode="1"]::after {
+    animation: modoGiro 3s linear infinite reverse;
+}
+
+@keyframes modoGiro {
+    0% {
+        transform: rotate(0deg) scale(.85);
+        opacity: .5;
+    }
+    50% {
+        transform: rotate(180deg) scale(1.3);
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(360deg) scale(.85);
+        opacity: .5;
+    }
+}
+
+/* 3. DEFORMACIÓN */
+
+#logo-forjador[data-light-mode="2"]::before {
+    animation: modoDeformacion 2.2s ease-in-out infinite;
+}
+
+#logo-forjador[data-light-mode="2"]::after {
+    animation: modoDeformacion 1.5s ease-in-out infinite reverse;
+}
+
+@keyframes modoDeformacion {
+    0%, 100% {
+        transform: scale(1, .65) skewX(-12deg);
+        border-radius: 50%;
+        opacity: .5;
+    }
+    50% {
+        transform: scale(1.4, 1.3) skewX(15deg);
+        border-radius: 35% 65% 45% 55%;
+        opacity: 1;
+    }
+}
+
+/* 4. EXPLOSIÓN */
+
+#logo-forjador[data-light-mode="3"]::before {
+    animation: modoExplosion 2s ease-out infinite;
+}
+
+#logo-forjador[data-light-mode="3"]::after {
+    animation: modoExplosion 2s ease-out infinite .3s;
+}
+
+@keyframes modoExplosion {
+    0% {
+        transform: scale(.3);
+        opacity: 0;
+    }
+    35% {
+        transform: scale(1.6);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(2.1);
+        opacity: 0;
+    }
+}
+
+/* 5. SUPERNOVA */
+
+#logo-forjador[data-light-mode="4"]::before {
+    animation: modoSupernova 3s ease-in-out infinite;
+}
+
+#logo-forjador[data-light-mode="4"]::after {
+    animation: modoSupernova 3s ease-in-out infinite reverse;
+}
+
+@keyframes modoSupernova {
+    0%, 100% {
+        transform: scale(.6);
+        opacity: .25;
+        filter: blur(18px);
+    }
+    45% {
+        transform: scale(1.8);
+        opacity: 1;
+        filter: blur(35px);
+    }
+    65% {
+        transform: scale(1.2);
+        opacity: .8;
+        filter: blur(20px);
+    }
+}
+
+/* MOVIMIENTO REDUCIDO */
+
+@media (prefers-reduced-motion: reduce) {
+    #logo-forjador::before,
+    #logo-forjador::after {
+        animation: none !important;
+        opacity: .8;
+    }
+}
+/* =====================================================
+   AJUSTE FINO - LUZ DEL LOGO GRAN FORJADOR
+===================================================== */
+
+#logo-forjador {
+    text-shadow:
+        0 0 3px rgba(255, 210, 120, .18),
+        0 0 7px rgba(255, 175, 65, .10);
+}
+
+#logo-forjador::before {
+    background: radial-gradient(
+        ellipse,
+        rgba(255, 215, 140, .32) 0%,
+        rgba(230, 165, 80, .16) 35%,
+        rgba(190, 120, 45, .06) 60%,
+        transparent 80%
+    );
+
+    filter: blur(28px);
+}
+
+#logo-forjador::after {
+    background: radial-gradient(
+        ellipse,
+        rgba(255, 225, 165, .16),
+        transparent 70%
+    );
+
+    filter: blur(20px);
+}
+
+/* Reducir intensidad de las animaciones */
+#logo-forjador[data-light-mode]::before,
+#logo-forjador[data-light-mode]::after {
+    opacity: .65;
+}
+/* =====================================================
+   AJUSTE FINO - LUZ DEL LOGO GRAN FORJADOR
+===================================================== */
+
+#logo-forjador {
+    text-shadow:
+        0 0 3px rgba(255, 210, 120, .18),
+        0 0 7px rgba(255, 175, 65, .10);
+}
+
+#logo-forjador::before {
+    background: radial-gradient(
+        ellipse,
+        rgba(255, 215, 140, .32) 0%,
+        rgba(230, 165, 80, .16) 35%,
+        rgba(190, 120, 45, .06) 60%,
+        transparent 80%
+    );
+
+    filter: blur(28px);
+}
+
+#logo-forjador::after {
+    background: radial-gradient(
+        ellipse,
+        rgba(255, 225, 165, .16),
+        transparent 70%
+    );
+
+    filter: blur(20px);
+}
+
+/* Reducir intensidad de las animaciones */
+#logo-forjador[data-light-mode]::before,
+#logo-forjador[data-light-mode]::after {
+    opacity: .65;
+}
+/* LUZ MAS FINA Y ALARGADA */
+
+#logo-forjador::before {
+    top: -18%;
+    bottom: -18%;
+    left: -65%;
+    right: -65%;
+
+    filter: blur(16px);
+}
+
+#logo-forjador::after {
+    top: -10%;
+    bottom: -10%;
+    left: -45%;
+    right: -45%;
+
+    filter: blur(12px);
+}
+/* AJUSTE SUTIL DE ILUMINACION - GRAN FORJADOR */
+
+#logo-forjador::before {
+    opacity: .75;
+}
+
+#logo-forjador::after {
+    opacity: .65;
+}
+
+#logo-forjador {
+    text-shadow:
+        0 0 3px rgba(255, 210, 120, .08);
+}
+/* LUZ MAS DISCRETA - GRAN FORJADOR */
+
+#logo-forjador::before {
+    opacity: .40;
+}
+
+#logo-forjador::after {
+    opacity: .30;
+}
+
+#logo-forjador {
+    text-shadow:
+        0 0 2px rgba(255, 210, 120, .05);
+}
+/* AJUSTE FINAL DE LUZ - GRAN FORJADOR */
+
+#logo-forjador::before {
+    opacity: .58 !important;
+}
+
+#logo-forjador::after {
+    opacity: .45 !important;
+}
+
+#logo-forjador {
+    text-shadow:
+        0 0 4px rgba(255, 210, 120, .12);
+}
+/* NAVEGACION Y POSICION DE LAS SECCIONES */
+
+#inicio,
+#sabores,
+#historia,
+#esencia,
+#contacto {
+    scroll-margin-top: 90px;
+}
