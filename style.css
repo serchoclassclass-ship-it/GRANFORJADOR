@@ -3339,3 +3339,22 @@ header nav a {
     }
 
 }
+/* =========================================
+   AJUSTES EXCLUSIVOS PARA MOVILES
+========================================= */
+
+@media (max-width: 600px) {
+
+    /* ETIQUETA: 10% MAS GRANDE */
+    .hero-image img {
+        max-width: 242px;
+        max-height: 319px;
+    }
+
+    /* FONDO: YUNQUE UN 10% MAS GRANDE */
+    body {
+        background-size: 110% auto;
+        background-position: center top;
+    }
+
+}
