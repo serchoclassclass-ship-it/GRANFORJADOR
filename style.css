@@ -1477,7 +1477,7 @@ body {
         ),
         url("./imagenes/fondo-forjado.jpg");
 
-    background-size: 100% 180%;
+    background-size: 100% auto;
     background-position: center top;
     background-repeat: no-repeat;
     background-attachment: scroll;
